@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Restaurants = mongoose.model("Restaurants", {
+const Restaurant = mongoose.model("Restaurant", {
   placeId: Number,
   name: String,
   address: String,
@@ -24,4 +24,4 @@ const Restaurants = mongoose.model("Restaurants", {
   nearbyPlacesIds: [Number],
 });
 
-module.exports = Restaurants;
+module.exports = Restaurant;

@@ -8,8 +8,8 @@ app.use(cors());
 
 mongoose.connect(process.env.MONGODB_URI);
 
-const restaurantsRoutes = require("./routes/restaurants");
-app.use(restaurantsRoutes);
+const restaurantRoutes = require("./routes/restaurant");
+app.use(restaurantRoutes);
 
 app.get("/favorites", (req, res) => {
   res.status(200).json({ message: "helloo i'm the favorites" });
