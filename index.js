@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+app.use(express.json());
 require("dotenv").config();
 const mongoose = require("mongoose");
 const axios = require("axios");
@@ -10,6 +11,12 @@ mongoose.connect(process.env.MONGODB_URI);
 
 const restaurantRoutes = require("./routes/restaurant");
 app.use(restaurantRoutes);
+
+const userRoutes = require("./routes/user");
+app.use(userRoutes);
+
+const favoriteRestaurantsRoutes = require("./routes/favoriteRestaurants");
+app.use(favoriteRestaurantsRoutes);
 
 app.get("/favorites", (req, res) => {
   res.status(200).json({ message: "helloo i'm the favorites" });
